@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: test
+        uri: lb://test-service
+        order: 11
+        predicates:
+          - Path=/test/**
+        filters:
+          - StripPrefix=1
